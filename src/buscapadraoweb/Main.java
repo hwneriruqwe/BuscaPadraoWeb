@@ -59,23 +59,23 @@ public class Main {
 
         //mapa do alfabeto
         char[] alfabeto = new char[16];
-        alfabeto[0] = '0';
-        alfabeto[1] = '1';
-        alfabeto[2] = '2';
-        alfabeto[3] = '3';
-        alfabeto[4] = '4';
-        alfabeto[5] = '5';
-        alfabeto[6] = '6';
-        alfabeto[7] = '7';
-        alfabeto[8] = '8';
-        alfabeto[9] = '9';
-        alfabeto[8] = '+';
-        alfabeto[9] = '(';
-        alfabeto[8] = '-';
-        alfabeto[9] = ' ';
-        alfabeto[8] = '.';
-        alfabeto[9] = ')';
 
+        alfabeto[0] = '+';
+        alfabeto[1] = '(';
+        alfabeto[2] = '-';
+        alfabeto[3] = ' ';
+        alfabeto[4] = '.';
+        alfabeto[5] = ')';
+        alfabeto[6] = '0';
+        alfabeto[7] = '1';
+        alfabeto[8] = '2';
+        alfabeto[9] = '3';
+        alfabeto[10] = '4';
+        alfabeto[11] = '5';
+        alfabeto[12] = '6';
+        alfabeto[13] = '7';
+        alfabeto[14] = '8';
+        alfabeto[15] = '9';
 
         //mapa de estados
         String[] estados = new String[29];
@@ -135,196 +135,267 @@ public class Main {
 // ---------------- q0 ----------------
 matriz[get_string_ref(estados, "q0")][get_char_ref(alfabeto, '+')] = get_string_ref(estados, "q1");
 matriz[get_string_ref(estados, "q0")][get_char_ref(alfabeto, '(')] = get_string_ref(estados, "q6");
+matriz[get_string_ref(estados, "q0")][get_char_ref(alfabeto, '-')] = -1;
+matriz[get_string_ref(estados, "q0")][get_char_ref(alfabeto, ' ')] = -1;
+matriz[get_string_ref(estados, "q0")][get_char_ref(alfabeto, '.')] = -1;
+matriz[get_string_ref(estados, "q0")][get_char_ref(alfabeto, ')')] = -1;
 for (char c = '0'; c <= '9'; c++) {
     matriz[get_string_ref(estados, "q0")][get_char_ref(alfabeto, c)] = get_string_ref(estados, "q7");
 }
 // ---------------- q1 ----------------
-for (char c = '0'; c <= '9'; c++) {
+matriz[get_string_ref(estados, "q1")][get_char_ref(alfabeto, '+')] = -1;
+matriz[get_string_ref(estados, "q1")][get_char_ref(alfabeto, '(')] = -1;
+matriz[get_string_ref(estados, "q1")][get_char_ref(alfabeto, '-')] = -1;
+matriz[get_string_ref(estados, "q1")][get_char_ref(alfabeto, ' ')] = -1;
+matriz[get_string_ref(estados, "q1")][get_char_ref(alfabeto, '.')] = -1;
+matriz[get_string_ref(estados, "q1")][get_char_ref(alfabeto, ')')] = -1;
+matriz[get_string_ref(estados, "q1")][get_char_ref(alfabeto, '0')] = -1;
+for (char c = '1'; c <= '9'; c++) {
     matriz[get_string_ref(estados, "q1")][get_char_ref(alfabeto, c)] = get_string_ref(estados, "q2");
 }
 // ---------------- q2 ----------------
+matriz[get_string_ref(estados, "q2")][get_char_ref(alfabeto, '+')] = -1;
 matriz[get_string_ref(estados, "q2")][get_char_ref(alfabeto, '(')] = get_string_ref(estados, "q6");
 matriz[get_string_ref(estados, "q2")][get_char_ref(alfabeto, '-')] = get_string_ref(estados, "q5");
 matriz[get_string_ref(estados, "q2")][get_char_ref(alfabeto, ' ')] = get_string_ref(estados, "q5");
 matriz[get_string_ref(estados, "q2")][get_char_ref(alfabeto, '.')] = get_string_ref(estados, "q5");
+matriz[get_string_ref(estados, "q2")][get_char_ref(alfabeto, ')')] = -1;
+
 for (char c = '0'; c <= '9'; c++) {
     matriz[get_string_ref(estados, "q2")][get_char_ref(alfabeto, c)] = get_string_ref(estados, "q3");
 }
 // ---------------- q3 ----------------
+matriz[get_string_ref(estados, "q3")][get_char_ref(alfabeto, '+')] = -1;
 matriz[get_string_ref(estados, "q3")][get_char_ref(alfabeto, '(')] = get_string_ref(estados, "q6");
 matriz[get_string_ref(estados, "q3")][get_char_ref(alfabeto, '-')] = get_string_ref(estados, "q5");
 matriz[get_string_ref(estados, "q3")][get_char_ref(alfabeto, ' ')] = get_string_ref(estados, "q5");
 matriz[get_string_ref(estados, "q3")][get_char_ref(alfabeto, '.')] = get_string_ref(estados, "q5");
+matriz[get_string_ref(estados, "q3")][get_char_ref(alfabeto, ')')] = -1;
+
 for (char c = '0'; c <= '9'; c++) {
     matriz[get_string_ref(estados, "q3")][get_char_ref(alfabeto, c)] = get_string_ref(estados, "q4");
 }
 // ---------------- q4 ----------------
+matriz[get_string_ref(estados, "q4")][get_char_ref(alfabeto, '+')] = -1;
 matriz[get_string_ref(estados, "q4")][get_char_ref(alfabeto, '(')] = get_string_ref(estados, "q6");
 matriz[get_string_ref(estados, "q4")][get_char_ref(alfabeto, '-')] = get_string_ref(estados, "q5");
 matriz[get_string_ref(estados, "q4")][get_char_ref(alfabeto, ' ')] = get_string_ref(estados, "q5");
 matriz[get_string_ref(estados, "q4")][get_char_ref(alfabeto, '.')] = get_string_ref(estados, "q5");
+matriz[get_string_ref(estados, "q4")][get_char_ref(alfabeto, ')')] = -1;
+
 for (char c = '0'; c <= '9'; c++) {
     matriz[get_string_ref(estados, "q4")][get_char_ref(alfabeto, c)] = get_string_ref(estados, "q5");
 }
 // ---------------- q5 ----------------
+matriz[get_string_ref(estados, "q5")][get_char_ref(alfabeto, '+')] = -1;
 matriz[get_string_ref(estados, "q5")][get_char_ref(alfabeto, '(')] = get_string_ref(estados, "q6");
-matriz[get_string_ref(estados, "q5")][get_char_ref(alfabeto, '-')] = get_string_ref(estados, "q5");
-matriz[get_string_ref(estados, "q5")][get_char_ref(alfabeto, ' ')] = get_string_ref(estados, "q5");
-matriz[get_string_ref(estados, "q5")][get_char_ref(alfabeto, '.')] = get_string_ref(estados, "q5");
+matriz[get_string_ref(estados, "q5")][get_char_ref(alfabeto, '-')] = -1;
+matriz[get_string_ref(estados, "q5")][get_char_ref(alfabeto, ' ')] = -1;
+matriz[get_string_ref(estados, "q5")][get_char_ref(alfabeto, '.')] = -1;
+matriz[get_string_ref(estados, "q5")][get_char_ref(alfabeto, ')')] = -1;
+
 for (char c = '0'; c <= '9'; c++) {
     matriz[get_string_ref(estados, "q5")][get_char_ref(alfabeto, c)] = get_string_ref(estados, "q7");
 }
 // ---------------- q6 ----------------
+matriz[get_string_ref(estados, "q6")][get_char_ref(alfabeto, '+')] = -1;
+matriz[get_string_ref(estados, "q6")][get_char_ref(alfabeto, '(')] = -1;
+matriz[get_string_ref(estados, "q6")][get_char_ref(alfabeto, '-')] = -1;
+matriz[get_string_ref(estados, "q6")][get_char_ref(alfabeto, ' ')] = -1;
+matriz[get_string_ref(estados, "q6")][get_char_ref(alfabeto, '.')] = -1;
+matriz[get_string_ref(estados, "q6")][get_char_ref(alfabeto, ')')] = -1;
+
 for (char c = '0'; c <= '9'; c++) {
     matriz[get_string_ref(estados, "q6")][get_char_ref(alfabeto, c)] = get_string_ref(estados, "q7");
 }
 // ---------------- q7 ----------------
-matriz[get_string_ref(estados, "q7")][get_char_ref(alfabeto, '(')] = get_string_ref(estados, "q11");
+matriz[get_string_ref(estados, "q7")][get_char_ref(alfabeto, '+')] = -1;
+matriz[get_string_ref(estados, "q7")][get_char_ref(alfabeto, '(')] = -1;
 matriz[get_string_ref(estados, "q7")][get_char_ref(alfabeto, '-')] = get_string_ref(estados, "q11");
 matriz[get_string_ref(estados, "q7")][get_char_ref(alfabeto, ' ')] = get_string_ref(estados, "q11");
-matriz[get_string_ref(estados, "q7")][get_char_ref(alfabeto, '.')] = get_string_ref(estados, "q10");
-matriz[get_string_ref(estados, "q7")][get_char_ref(alfabeto, ')')] = get_string_ref(estados, "q8");
+matriz[get_string_ref(estados, "q7")][get_char_ref(alfabeto, '.')] = get_string_ref(estados, "q11");
+matriz[get_string_ref(estados, "q7")][get_char_ref(alfabeto, ')')] = get_string_ref(estados, "q10");
+
 for (char c = '0'; c <= '9'; c++) {
     matriz[get_string_ref(estados, "q7")][get_char_ref(alfabeto, c)] = get_string_ref(estados, "q8");
 }
 // ---------------- q8 ----------------
-matriz[get_string_ref(estados, "q8")][get_char_ref(alfabeto, '(')] = get_string_ref(estados, "q11");
+matriz[get_string_ref(estados, "q8")][get_char_ref(alfabeto, '+')] = -1;
+matriz[get_string_ref(estados, "q8")][get_char_ref(alfabeto, '(')] = -1;
 matriz[get_string_ref(estados, "q8")][get_char_ref(alfabeto, '-')] = get_string_ref(estados, "q11");
 matriz[get_string_ref(estados, "q8")][get_char_ref(alfabeto, ' ')] = get_string_ref(estados, "q11");
-matriz[get_string_ref(estados, "q8")][get_char_ref(alfabeto, '.')] = get_string_ref(estados, "q10");
-matriz[get_string_ref(estados, "q8")][get_char_ref(alfabeto, ')')] = get_string_ref(estados, "q9");
+matriz[get_string_ref(estados, "q8")][get_char_ref(alfabeto, '.')] = get_string_ref(estados, "q11");
+matriz[get_string_ref(estados, "q8")][get_char_ref(alfabeto, ')')] = get_string_ref(estados, "q10");
+
 for (char c = '0'; c <= '9'; c++) {
     matriz[get_string_ref(estados, "q8")][get_char_ref(alfabeto, c)] = get_string_ref(estados, "q9");
 }
-// ---------------- q9 (final) ----------------
-matriz[get_string_ref(estados, "q9")][get_char_ref(alfabeto, '(')] = get_string_ref(estados, "q11");
-matriz[get_string_ref(estados, "q9")][get_char_ref(alfabeto, '-')] = get_string_ref(estados, "q12");
+// ---------------- q9 ----------------
+matriz[get_string_ref(estados, "q9")][get_char_ref(alfabeto, '+')] = -1;
+matriz[get_string_ref(estados, "q9")][get_char_ref(alfabeto, '(')] = -1;
+matriz[get_string_ref(estados, "q9")][get_char_ref(alfabeto, '-')] = get_string_ref(estados, "q11");
 matriz[get_string_ref(estados, "q9")][get_char_ref(alfabeto, ' ')] = get_string_ref(estados, "q12");
-matriz[get_string_ref(estados, "q9")][get_char_ref(alfabeto, '.')] = get_string_ref(estados, "q10");
-matriz[get_string_ref(estados, "q9")][get_char_ref(alfabeto, ')')] = get_string_ref(estados, "q13");
+matriz[get_string_ref(estados, "q9")][get_char_ref(alfabeto, '.')] = get_string_ref(estados, "q12");
+matriz[get_string_ref(estados, "q9")][get_char_ref(alfabeto, ')')] = get_string_ref(estados, "q10");
+
 for (char c = '0'; c <= '9'; c++) {
     matriz[get_string_ref(estados, "q9")][get_char_ref(alfabeto, c)] = get_string_ref(estados, "q13");
 }
-matriz[get_string_ref(estados, "q9")][get_char_ref(alfabeto, '+')] = -1;
-
 // ---------------- q10 ----------------
-matriz[get_string_ref(estados, "q10")][get_char_ref(alfabeto, '(')] = get_string_ref(estados, "q11");
+matriz[get_string_ref(estados, "q10")][get_char_ref(alfabeto, '+')] = -1;
+matriz[get_string_ref(estados, "q10")][get_char_ref(alfabeto, '(')] = -1;
 matriz[get_string_ref(estados, "q10")][get_char_ref(alfabeto, '-')] = get_string_ref(estados, "q11");
 matriz[get_string_ref(estados, "q10")][get_char_ref(alfabeto, ' ')] = get_string_ref(estados, "q11");
 matriz[get_string_ref(estados, "q10")][get_char_ref(alfabeto, '.')] = get_string_ref(estados, "q11");
+matriz[get_string_ref(estados, "q10")][get_char_ref(alfabeto, ')')] = -1;
+
 for (char c = '0'; c <= '9'; c++) {
     matriz[get_string_ref(estados, "q10")][get_char_ref(alfabeto, c)] = get_string_ref(estados, "q13");
 }
-
 // ---------------- q11 ----------------
+matriz[get_string_ref(estados, "q11")][get_char_ref(alfabeto, '+')] = -1;
+matriz[get_string_ref(estados, "q11")][get_char_ref(alfabeto, '(')] = -1;
+matriz[get_string_ref(estados, "q11")][get_char_ref(alfabeto, '-')] = -1;
+matriz[get_string_ref(estados, "q11")][get_char_ref(alfabeto, ' ')] = -1;
+matriz[get_string_ref(estados, "q11")][get_char_ref(alfabeto, '.')] = -1;
+matriz[get_string_ref(estados, "q11")][get_char_ref(alfabeto, ')')] = -1;
+
 for (char c = '0'; c <= '9'; c++) {
     matriz[get_string_ref(estados, "q11")][get_char_ref(alfabeto, c)] = get_string_ref(estados, "q13");
 }
+// ---------------- q12 ----------------
+matriz[get_string_ref(estados, "q12")][get_char_ref(alfabeto, '+')] = -1;
+matriz[get_string_ref(estados, "q12")][get_char_ref(alfabeto, '(')] = -1;
+matriz[get_string_ref(estados, "q12")][get_char_ref(alfabeto, '-')] = -1;
+matriz[get_string_ref(estados, "q12")][get_char_ref(alfabeto, ' ')] = -1;
+matriz[get_string_ref(estados, "q12")][get_char_ref(alfabeto, '.')] = -1;
+matriz[get_string_ref(estados, "q12")][get_char_ref(alfabeto, ')')] = -1;
 
-// ---------------- q12 (final) ----------------
-for (int i = 0; i < alfabeto.length; i++) {
-    matriz[get_string_ref(estados, "q12")][i] = -1;
-}
 for (char c = '0'; c <= '9'; c++) {
     matriz[get_string_ref(estados, "q12")][get_char_ref(alfabeto, c)] = get_string_ref(estados, "q13");
 }
-// ---------------- q13 (final) ----------------
-matriz[get_string_ref(estados, "q13")][get_char_ref(alfabeto, '(')] = get_string_ref(estados, "q17");
-matriz[get_string_ref(estados, "q13")][get_char_ref(alfabeto, '-')] = get_string_ref(estados, "q18");
+// ---------------- q13 ----------------
+matriz[get_string_ref(estados, "q13")][get_char_ref(alfabeto, '+')] = -1;
+matriz[get_string_ref(estados, "q13")][get_char_ref(alfabeto, '(')] = -1;
+matriz[get_string_ref(estados, "q13")][get_char_ref(alfabeto, '-')] = get_string_ref(estados, "q17");
 matriz[get_string_ref(estados, "q13")][get_char_ref(alfabeto, ' ')] = get_string_ref(estados, "q18");
-matriz[get_string_ref(estados, "q13")][get_char_ref(alfabeto, '.')] = get_string_ref(estados, "q14");
+matriz[get_string_ref(estados, "q13")][get_char_ref(alfabeto, '.')] = get_string_ref(estados, "q18");
+matriz[get_string_ref(estados, "q13")][get_char_ref(alfabeto, ')')] = -1;
+
 for (char c = '0'; c <= '9'; c++) {
     matriz[get_string_ref(estados, "q13")][get_char_ref(alfabeto, c)] = get_string_ref(estados, "q14");
 }
-matriz[get_string_ref(estados, "q13")][get_char_ref(alfabeto, '+')] = -1;
-// ---------------- q14 (final) ----------------
-matriz[get_string_ref(estados, "q14")][get_char_ref(alfabeto, '(')] = get_string_ref(estados, "q17");
-matriz[get_string_ref(estados, "q14")][get_char_ref(alfabeto, '-')] = get_string_ref(estados, "q18");
+// ---------------- q14 ----------------
+matriz[get_string_ref(estados, "q14")][get_char_ref(alfabeto, '+')] = -1;
+matriz[get_string_ref(estados, "q14")][get_char_ref(alfabeto, '(')] = -1;
+matriz[get_string_ref(estados, "q14")][get_char_ref(alfabeto, '-')] = get_string_ref(estados, "q17");
 matriz[get_string_ref(estados, "q14")][get_char_ref(alfabeto, ' ')] = get_string_ref(estados, "q18");
-matriz[get_string_ref(estados, "q14")][get_char_ref(alfabeto, '.')] = get_string_ref(estados, "q15");
+matriz[get_string_ref(estados, "q14")][get_char_ref(alfabeto, '.')] = get_string_ref(estados, "q18");
+matriz[get_string_ref(estados, "q14")][get_char_ref(alfabeto, ')')] = -1;
+
 for (char c = '0'; c <= '9'; c++) {
     matriz[get_string_ref(estados, "q14")][get_char_ref(alfabeto, c)] = get_string_ref(estados, "q15");
 }
-matriz[get_string_ref(estados, "q14")][get_char_ref(alfabeto, '+')] = -1;
-// ---------------- q15 (final) ----------------
-matriz[get_string_ref(estados, "q15")][get_char_ref(alfabeto, '(')] = get_string_ref(estados, "q17");
-matriz[get_string_ref(estados, "q15")][get_char_ref(alfabeto, '-')] = get_string_ref(estados, "q18");
+// ---------------- q15 ----------------
+matriz[get_string_ref(estados, "q15")][get_char_ref(alfabeto, '+')] = -1;
+matriz[get_string_ref(estados, "q15")][get_char_ref(alfabeto, '(')] = -1;
+matriz[get_string_ref(estados, "q15")][get_char_ref(alfabeto, '-')] = get_string_ref(estados, "q17");
 matriz[get_string_ref(estados, "q15")][get_char_ref(alfabeto, ' ')] = get_string_ref(estados, "q18");
-matriz[get_string_ref(estados, "q15")][get_char_ref(alfabeto, '.')] = get_string_ref(estados, "q16");
+matriz[get_string_ref(estados, "q15")][get_char_ref(alfabeto, '.')] = get_string_ref(estados, "q18");
+matriz[get_string_ref(estados, "q15")][get_char_ref(alfabeto, ')')] = -1;
+
 for (char c = '0'; c <= '9'; c++) {
     matriz[get_string_ref(estados, "q15")][get_char_ref(alfabeto, c)] = get_string_ref(estados, "q16");
 }
-matriz[get_string_ref(estados, "q15")][get_char_ref(alfabeto, '+')] = -1;
-// ---------------- q16 (final) ----------------
-matriz[get_string_ref(estados, "q16")][get_char_ref(alfabeto, '(')] = get_string_ref(estados, "q17");
-matriz[get_string_ref(estados, "q16")][get_char_ref(alfabeto, '-')] = get_string_ref(estados, "q18");
+// ---------------- q16 ----------------
+matriz[get_string_ref(estados, "q16")][get_char_ref(alfabeto, '+')] = -1;
+matriz[get_string_ref(estados, "q16")][get_char_ref(alfabeto, '(')] = -1;
+matriz[get_string_ref(estados, "q16")][get_char_ref(alfabeto, '-')] = get_string_ref(estados, "q17");
 matriz[get_string_ref(estados, "q16")][get_char_ref(alfabeto, ' ')] = get_string_ref(estados, "q18");
-matriz[get_string_ref(estados, "q16")][get_char_ref(alfabeto, '.')] = get_string_ref(estados, "q19");
+matriz[get_string_ref(estados, "q16")][get_char_ref(alfabeto, '.')] = get_string_ref(estados, "q18");
+matriz[get_string_ref(estados, "q16")][get_char_ref(alfabeto, ')')] = -1;
+
 for (char c = '0'; c <= '9'; c++) {
     matriz[get_string_ref(estados, "q16")][get_char_ref(alfabeto, c)] = get_string_ref(estados, "q19");
 }
-matriz[get_string_ref(estados, "q16")][get_char_ref(alfabeto, '+')] = -1;
 // ---------------- q17 ----------------
+matriz[get_string_ref(estados, "q17")][get_char_ref(alfabeto, '+')] = -1;
+matriz[get_string_ref(estados, "q17")][get_char_ref(alfabeto, '(')] = -1;
+matriz[get_string_ref(estados, "q17")][get_char_ref(alfabeto, '-')] = -1;
+matriz[get_string_ref(estados, "q17")][get_char_ref(alfabeto, ' ')] = -1;
+matriz[get_string_ref(estados, "q17")][get_char_ref(alfabeto, '.')] = -1;
+matriz[get_string_ref(estados, "q17")][get_char_ref(alfabeto, ')')] = -1;
+
 for (char c = '0'; c <= '9'; c++) {
     matriz[get_string_ref(estados, "q17")][get_char_ref(alfabeto, c)] = get_string_ref(estados, "q19");
 }
-// ---------------- q18 (final) ----------------
-for (char c = '0'; c <= '9'; c++) {
-    matriz[get_string_ref(estados, "q18")][get_char_ref(alfabeto, c)] = get_string_ref(estados, "q19");
-}
+// ---------------- q18 ----------------
 matriz[get_string_ref(estados, "q18")][get_char_ref(alfabeto, '+')] = -1;
 matriz[get_string_ref(estados, "q18")][get_char_ref(alfabeto, '(')] = -1;
 matriz[get_string_ref(estados, "q18")][get_char_ref(alfabeto, '-')] = -1;
 matriz[get_string_ref(estados, "q18")][get_char_ref(alfabeto, ' ')] = -1;
 matriz[get_string_ref(estados, "q18")][get_char_ref(alfabeto, '.')] = -1;
 matriz[get_string_ref(estados, "q18")][get_char_ref(alfabeto, ')')] = -1;
-// ---------------- q19 (final) ----------------
-matriz[get_string_ref(estados, "q19")][get_char_ref(alfabeto, '(')] = get_string_ref(estados, "q23");
-matriz[get_string_ref(estados, "q19")][get_char_ref(alfabeto, '-')] = get_string_ref(estados, "q24");
+
+for (char c = '0'; c <= '9'; c++) {
+    matriz[get_string_ref(estados, "q18")][get_char_ref(alfabeto, c)] = get_string_ref(estados, "q19");
+}
+// ---------------- q19 ----------------
+matriz[get_string_ref(estados, "q19")][get_char_ref(alfabeto, '+')] = -1;
+matriz[get_string_ref(estados, "q19")][get_char_ref(alfabeto, '(')] = -1;
+matriz[get_string_ref(estados, "q19")][get_char_ref(alfabeto, '-')] = get_string_ref(estados, "q23");
 matriz[get_string_ref(estados, "q19")][get_char_ref(alfabeto, ' ')] = get_string_ref(estados, "q24");
-matriz[get_string_ref(estados, "q19")][get_char_ref(alfabeto, '.')] = get_string_ref(estados, "q20");
+matriz[get_string_ref(estados, "q19")][get_char_ref(alfabeto, '.')] = get_string_ref(estados, "q24");
+matriz[get_string_ref(estados, "q19")][get_char_ref(alfabeto, ')')] = -1;
+
 for (char c = '0'; c <= '9'; c++) {
     matriz[get_string_ref(estados, "q19")][get_char_ref(alfabeto, c)] = get_string_ref(estados, "q20");
 }
-matriz[get_string_ref(estados, "q19")][get_char_ref(alfabeto, '+')] = -1;
-// ---------------- q20 (final) ----------------
-matriz[get_string_ref(estados, "q20")][get_char_ref(alfabeto, '(')] = get_string_ref(estados, "q23");
-matriz[get_string_ref(estados, "q20")][get_char_ref(alfabeto, '-')] = get_string_ref(estados, "q24");
+// ---------------- q20 ----------------
+matriz[get_string_ref(estados, "q20")][get_char_ref(alfabeto, '+')] = -1;
+matriz[get_string_ref(estados, "q20")][get_char_ref(alfabeto, '(')] = -1;
+matriz[get_string_ref(estados, "q20")][get_char_ref(alfabeto, '-')] = get_string_ref(estados, "q23");
 matriz[get_string_ref(estados, "q20")][get_char_ref(alfabeto, ' ')] = get_string_ref(estados, "q24");
-matriz[get_string_ref(estados, "q20")][get_char_ref(alfabeto, '.')] = get_string_ref(estados, "q21");
+matriz[get_string_ref(estados, "q20")][get_char_ref(alfabeto, '.')] = get_string_ref(estados, "q24");
+matriz[get_string_ref(estados, "q20")][get_char_ref(alfabeto, ')')] = -1;
+
 for (char c = '0'; c <= '9'; c++) {
     matriz[get_string_ref(estados, "q20")][get_char_ref(alfabeto, c)] = get_string_ref(estados, "q21");
 }
-matriz[get_string_ref(estados, "q20")][get_char_ref(alfabeto, '+')] = -1;
-// ---------------- q21 (final) ----------------
-matriz[get_string_ref(estados, "q21")][get_char_ref(alfabeto, '(')] = get_string_ref(estados, "q23");
-matriz[get_string_ref(estados, "q21")][get_char_ref(alfabeto, '-')] = get_string_ref(estados, "q24");
+// ---------------- q21 ----------------
+matriz[get_string_ref(estados, "q21")][get_char_ref(alfabeto, '+')] = -1;
+matriz[get_string_ref(estados, "q21")][get_char_ref(alfabeto, '(')] = -1;
+matriz[get_string_ref(estados, "q21")][get_char_ref(alfabeto, '-')] = get_string_ref(estados, "q23");
 matriz[get_string_ref(estados, "q21")][get_char_ref(alfabeto, ' ')] = get_string_ref(estados, "q24");
-matriz[get_string_ref(estados, "q21")][get_char_ref(alfabeto, '.')] = get_string_ref(estados, "q22");
+matriz[get_string_ref(estados, "q21")][get_char_ref(alfabeto, '.')] = get_string_ref(estados, "q24");
+matriz[get_string_ref(estados, "q21")][get_char_ref(alfabeto, ')')] = -1;
+
 for (char c = '0'; c <= '9'; c++) {
     matriz[get_string_ref(estados, "q21")][get_char_ref(alfabeto, c)] = get_string_ref(estados, "q22");
 }
-matriz[get_string_ref(estados, "q21")][get_char_ref(alfabeto, '+')] = -1;
-
-// ---------------- q22 (final) ----------------
-matriz[get_string_ref(estados, "q22")][get_char_ref(alfabeto, '(')] = get_string_ref(estados, "q23");
-matriz[get_string_ref(estados, "q22")][get_char_ref(alfabeto, '-')] = get_string_ref(estados, "q24");
+// ---------------- q22 ----------------
+matriz[get_string_ref(estados, "q22")][get_char_ref(alfabeto, '+')] = -1;
+matriz[get_string_ref(estados, "q22")][get_char_ref(alfabeto, '(')] = -1;
+matriz[get_string_ref(estados, "q22")][get_char_ref(alfabeto, '-')] = get_string_ref(estados, "q23");
 matriz[get_string_ref(estados, "q22")][get_char_ref(alfabeto, ' ')] = get_string_ref(estados, "q24");
-matriz[get_string_ref(estados, "q22")][get_char_ref(alfabeto, '.')] = get_string_ref(estados, "q25");
+matriz[get_string_ref(estados, "q22")][get_char_ref(alfabeto, '.')] = get_string_ref(estados, "q24");
+matriz[get_string_ref(estados, "q22")][get_char_ref(alfabeto, ')')] = -1;
+
 for (char c = '0'; c <= '9'; c++) {
     matriz[get_string_ref(estados, "q22")][get_char_ref(alfabeto, c)] = get_string_ref(estados, "q25");
 }
-matriz[get_string_ref(estados, "q22")][get_char_ref(alfabeto, '+')] = -1;
-
 // ---------------- q23 ----------------
+matriz[get_string_ref(estados, "q23")][get_char_ref(alfabeto, '+')] = -1;
+matriz[get_string_ref(estados, "q23")][get_char_ref(alfabeto, '(')] = -1;
+matriz[get_string_ref(estados, "q23")][get_char_ref(alfabeto, '-')] = -1;
+matriz[get_string_ref(estados, "q23")][get_char_ref(alfabeto, ' ')] = -1;
+matriz[get_string_ref(estados, "q23")][get_char_ref(alfabeto, '.')] = -1;
+matriz[get_string_ref(estados, "q23")][get_char_ref(alfabeto, ')')] = -1;
+
 for (char c = '0'; c <= '9'; c++) {
     matriz[get_string_ref(estados, "q23")][get_char_ref(alfabeto, c)] = get_string_ref(estados, "q25");
 }
-
-// ---------------- q24 (final) ----------------
-for (char c = '0'; c <= '9'; c++) {
-    matriz[get_string_ref(estados, "q24")][get_char_ref(alfabeto, c)] = get_string_ref(estados, "q25");
-}
+// ---------------- q24 ----------------
 matriz[get_string_ref(estados, "q24")][get_char_ref(alfabeto, '+')] = -1;
 matriz[get_string_ref(estados, "q24")][get_char_ref(alfabeto, '(')] = -1;
 matriz[get_string_ref(estados, "q24")][get_char_ref(alfabeto, '-')] = -1;
@@ -332,10 +403,10 @@ matriz[get_string_ref(estados, "q24")][get_char_ref(alfabeto, ' ')] = -1;
 matriz[get_string_ref(estados, "q24")][get_char_ref(alfabeto, '.')] = -1;
 matriz[get_string_ref(estados, "q24")][get_char_ref(alfabeto, ')')] = -1;
 
-// ---------------- q25 (final) ----------------
 for (char c = '0'; c <= '9'; c++) {
-    matriz[get_string_ref(estados, "q25")][get_char_ref(alfabeto, c)] = get_string_ref(estados, "q26");
+    matriz[get_string_ref(estados, "q24")][get_char_ref(alfabeto, c)] = get_string_ref(estados, "q25");
 }
+// ---------------- q25 ----------------
 matriz[get_string_ref(estados, "q25")][get_char_ref(alfabeto, '+')] = -1;
 matriz[get_string_ref(estados, "q25")][get_char_ref(alfabeto, '(')] = -1;
 matriz[get_string_ref(estados, "q25")][get_char_ref(alfabeto, '-')] = -1;
@@ -343,10 +414,10 @@ matriz[get_string_ref(estados, "q25")][get_char_ref(alfabeto, ' ')] = -1;
 matriz[get_string_ref(estados, "q25")][get_char_ref(alfabeto, '.')] = -1;
 matriz[get_string_ref(estados, "q25")][get_char_ref(alfabeto, ')')] = -1;
 
-// ---------------- q26 (final) ----------------
 for (char c = '0'; c <= '9'; c++) {
-    matriz[get_string_ref(estados, "q26")][get_char_ref(alfabeto, c)] = get_string_ref(estados, "q27");
+    matriz[get_string_ref(estados, "q25")][get_char_ref(alfabeto, c)] = get_string_ref(estados, "q26");
 }
+// ---------------- q26 ----------------
 matriz[get_string_ref(estados, "q26")][get_char_ref(alfabeto, '+')] = -1;
 matriz[get_string_ref(estados, "q26")][get_char_ref(alfabeto, '(')] = -1;
 matriz[get_string_ref(estados, "q26")][get_char_ref(alfabeto, '-')] = -1;
@@ -354,10 +425,10 @@ matriz[get_string_ref(estados, "q26")][get_char_ref(alfabeto, ' ')] = -1;
 matriz[get_string_ref(estados, "q26")][get_char_ref(alfabeto, '.')] = -1;
 matriz[get_string_ref(estados, "q26")][get_char_ref(alfabeto, ')')] = -1;
 
-// ---------------- q27 (final) ----------------
 for (char c = '0'; c <= '9'; c++) {
-    matriz[get_string_ref(estados, "q27")][get_char_ref(alfabeto, c)] = get_string_ref(estados, "q28");
+    matriz[get_string_ref(estados, "q26")][get_char_ref(alfabeto, c)] = get_string_ref(estados, "q27");
 }
+// ---------------- q27 ----------------
 matriz[get_string_ref(estados, "q27")][get_char_ref(alfabeto, '+')] = -1;
 matriz[get_string_ref(estados, "q27")][get_char_ref(alfabeto, '(')] = -1;
 matriz[get_string_ref(estados, "q27")][get_char_ref(alfabeto, '-')] = -1;
@@ -365,9 +436,19 @@ matriz[get_string_ref(estados, "q27")][get_char_ref(alfabeto, ' ')] = -1;
 matriz[get_string_ref(estados, "q27")][get_char_ref(alfabeto, '.')] = -1;
 matriz[get_string_ref(estados, "q27")][get_char_ref(alfabeto, ')')] = -1;
 
-// ---------------- q28 (final) ----------------
-for (int i = 0; i < alfabeto.length; i++) {
-    matriz[get_string_ref(estados, "q28")][i] = -1;
+for (char c = '0'; c <= '9'; c++) {
+    matriz[get_string_ref(estados, "q27")][get_char_ref(alfabeto, c)] = get_string_ref(estados, "q28");
+}
+// ---------------- q28 ----------------
+matriz[get_string_ref(estados, "q28")][get_char_ref(alfabeto, '+')] = -1;
+matriz[get_string_ref(estados, "q28")][get_char_ref(alfabeto, '(')] = -1;
+matriz[get_string_ref(estados, "q28")][get_char_ref(alfabeto, '-')] = -1;
+matriz[get_string_ref(estados, "q28")][get_char_ref(alfabeto, ' ')] = -1;
+matriz[get_string_ref(estados, "q28")][get_char_ref(alfabeto, '.')] = -1;
+matriz[get_string_ref(estados, "q28")][get_char_ref(alfabeto, ')')] = -1;
+
+for (char c = '0'; c <= '9'; c++) {
+    matriz[get_string_ref(estados, "q28")][get_char_ref(alfabeto, c)] = -1;
 }
 
 
